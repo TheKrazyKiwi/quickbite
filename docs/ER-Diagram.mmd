@@ -1,0 +1,18 @@
+erDiagram
+  USERS ||--o{ ORDERS : places_or_processes
+  CATEGORIES ||--o{ FOOD_ITEMS : contains
+  FOOD_ITEMS ||--|| INVENTORY : has
+  ORDERS ||--|{ ORDER_DETAILS : contains
+  FOOD_ITEMS ||--o{ ORDER_DETAILS : appears_in
+  ORDERS ||--|| PAYMENTS : has
+  SUPPLIERS ||--o{ SUPPLIER_ITEMS : supplies
+  FOOD_ITEMS ||--o{ SUPPLIER_ITEMS : sourced_by
+  USERS { int id PK string email UK enum role }
+  CATEGORIES { int id PK string name UK }
+  FOOD_ITEMS { int id PK int category_id FK decimal price boolean available }
+  INVENTORY { int id PK int food_id FK int stock_quantity }
+  ORDERS { int id PK int student_id FK int staff_id FK string pickup_slot enum status }
+  ORDER_DETAILS { int id PK int order_id FK int food_id FK int quantity decimal unit_price }
+  PAYMENTS { int id PK int order_id FK decimal amount enum status }
+  SUPPLIERS { int id PK string name }
+  SUPPLIER_ITEMS { int supplier_id PK_FK int food_id PK_FK decimal supply_price }

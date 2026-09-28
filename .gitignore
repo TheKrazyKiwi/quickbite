@@ -1,0 +1,13 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+.pytest_cache/
+.idea/
+.vscode/
+.DS_Store
+*.db
+LLM-HANDOFF.md

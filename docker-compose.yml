@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: quickbite
+      POSTGRES_USER: quickbite
+      POSTGRES_PASSWORD: quickbite
+    ports: ["5432:5432"]
+    volumes: [postgres_data:/var/lib/postgresql/data]
+volumes:
+  postgres_data:
